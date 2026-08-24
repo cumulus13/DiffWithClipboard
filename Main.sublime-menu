@@ -1,0 +1,27 @@
+[
+    {
+        "id": "tools",
+        "children": [
+            { "caption": "-", "id": "diff_with_clipboard_separator_before" },
+            {
+                "caption": "Diff With Clipboard",
+                "id": "diff_with_clipboard",
+                "children": [
+                    {
+                        "caption": "Diff Current File with Clipboard",
+                        "command": "diff_current_with_clipboard"
+                    },
+                    {
+                        "caption": "Diff Selection with Clipboard",
+                        "command": "diff_selection_with_clipboard"
+                    },
+                    { "caption": "-" },
+                    {
+                        "caption": "Set Default Diff Tool\u2026",
+                        "command": "diff_with_clipboard_set_tool"
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,0 +1,31 @@
+DiffWithClipboard
+=================
+
+Thanks for installing DiffWithClipboard!
+
+What it does
+------------
+- Diff the current file (as saved on disk) against the clipboard.
+- Diff just the current selection against the clipboard.
+- Works with any of 13 external diff tools: delta, diff, sdiff, vimdiff,
+  meld, kdiff3, diffmerge, kompare, tkdiff, bcompare, filemerge,
+  kaleidoscope, winmerge, amerge.
+
+Quick start
+-----------
+1. Open Preferences > Package Settings > DiffWithClipboard > Settings
+   and set "diff_tool" to your preferred tool alias (default: "meld").
+2. Use the Command Palette ("Diff With Clipboard: ...") or:
+     Tools > Diff With Clipboard
+     Right-click in the editor > Diff Selection/File with Clipboard
+     Ctrl+Alt+m           -> diff whole file with clipboard
+     Ctrl+Alt+Shift+M     -> diff selection with clipboard
+
+Per-project override
+---------------------
+Drop a "pt.yml" or "pt.yaml" file with a "diff_tool: <alias>" line into
+your project root (or the current file's folder) to override the tool
+for that project only.
+
+See README.md for the full tool table, settings reference, and
+troubleshooting notes.

@@ -1,0 +1,27 @@
+{
+    // Default diff tool alias. See README.md for the full list of
+    // supported tools and platforms.
+    "diff_tool": "meld",
+
+    // Explicit path overrides, keyed by tool alias. Use this if a tool
+    // isn't on PATH or isn't installed in its usual default location.
+    // Example:
+    // "tool_paths": { "winmerge": "D:\\Tools\\WinMerge\\WinMergeU.exe" }
+    "tool_paths": {
+    },
+
+    // Project-local config filenames checked *before* this settings file.
+    // Searched in each open project folder, then the current file's folder.
+    // Only a top-level "diff_tool: <alias>" key is read from these files.
+    "config_filenames": ["pt.yml", "pt.yaml"],
+
+    // Extra CLI arguments appended after the standard two-file arguments,
+    // keyed by tool alias.
+    // Example: "extra_args": { "diff": ["-w", "--color=always"] }
+    "extra_args": {
+    },
+
+    // Terminal emulators tried in order on Linux to host TUI tools
+    // (vimdiff, sdiff). The first one found on PATH is used.
+    "linux_terminals": ["x-terminal-emulator", "gnome-terminal", "konsole", "xfce4-terminal", "xterm"]
+}

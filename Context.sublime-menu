@@ -1,0 +1,11 @@
+[
+    { "caption": "-", "id": "diff_with_clipboard_separator" },
+    {
+        "caption": "Diff Selection with Clipboard",
+        "command": "diff_selection_with_clipboard"
+    },
+    {
+        "caption": "Diff File with Clipboard",
+        "command": "diff_current_with_clipboard"
+    }
+]
