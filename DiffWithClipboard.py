@@ -272,6 +272,18 @@ class DiffCurrentWithClipboardCommand(sublime_plugin.TextCommand):
             sublime.status_message("Clipboard is empty. Cannot diff.")
             return
 
+        # --- NEW LOGIC: Check if file and clipboard are identical ---
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                file_content = f.read()
+            if file_content == clipboard_content:
+                sublime.message_dialog("The current file and the clipboard content are identical. Nothing to diff!")
+                return
+        except Exception as e:
+            # Silently fallback to running diff tool if we can't read the file encoding
+            pass
+        # ------------------------------------------------------------
+
         alias = resolve_tool_alias(self.view, settings, tool)
         exe = resolve_tool_executable(alias, settings)
         if not exe:
@@ -311,6 +323,12 @@ class DiffSelectionWithClipboardCommand(sublime_plugin.TextCommand):
         if not clipboard_content.strip():
             sublime.status_message("Clipboard is empty. Cannot diff.")
             return
+
+        # --- NEW LOGIC: Check if selection and clipboard are identical ---
+        if selected_text == clipboard_content:
+            sublime.message_dialog("The selected text and the clipboard content are identical. Nothing to diff!")
+            return
+        # -----------------------------------------------------------------
 
         alias = resolve_tool_alias(self.view, settings, tool)
         exe = resolve_tool_executable(alias, settings)
